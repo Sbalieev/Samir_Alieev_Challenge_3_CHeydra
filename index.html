@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Challenge 3</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:700,900" rel="stylesheet">
+	<script src="js/main.js" defer></script>
+    <script src="js/api.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div id="map">
+                
+            </div>
+            <div id="informatie">
+                <div class="icons">
+                    <img src="img/airplane.png" /> Bestemming
+                </div>
+                <div class="icons">
+                    <img src="img/food.png" /> Voedsel
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div id="datum" >
+                    <article id="weather"></article>
+                    <form>
+                        <fieldset>
+                            <legend>Huidige weer opvragen</legend>
+                            <label for="city">Stad:</label>
+                            <input type="text" name="city" id="city" />
+                            <input type="button" id="getWeather" value="Opvragen" />
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div> 
+</body>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzumPJ_D00IzZtRaoa8vBE3SmjvX9pCXk&callback=initMap">
+</script>
+</html>
