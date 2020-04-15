@@ -1,5 +1,5 @@
-
 function getAPIdata() {
+
 	var url = 'https://api.openweathermap.org/data/2.5/weather';
 	var apiKey ='d208868a5986aa80b81e3622080a435e';
 	var city = document.getElementById('city').value;
@@ -35,11 +35,15 @@ function onAPISucces(response) {
 	var type = response.weather[0].description;
 
 	// get temperature in Celcius
+	var cityID = response.id;
 	var degC = Math.floor(response.main.temp - 273.15);
-
+	var iconUrl = 'http://openweathermap.org/img/w/'+response.weather[0].icon+'.png';
 	// render weather in DOM
 	var weatherBox = document.getElementById('weather');
-	weatherBox.innerHTML = degC + '&#176;C <br>' + type;
+	
+	weatherBox.innerHTML = degC + '&#176;C <br>' + type + '<div class="icon"> <img src="'+iconUrl+'"> </div>';
+	
+	 
 }
 
 function onAPIError(error) {
@@ -48,7 +52,15 @@ function onAPIError(error) {
 	weatherBox.innerHTML = 'Geen data beschikbaar, controleer de stad nog eens.'; 
 }
 
+var populaireSteden = true;
+
 document.getElementById('getWeather').onclick = function(){
 	// init data stream
 	getAPIdata();
+	if(populaireSteden == true){
+		getAPIWeerdata();
+		populaireSteden = false;
+	} 
 };
+
+

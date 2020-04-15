@@ -1,4 +1,4 @@
- function initMap() {
+function initMap() {
  	
  	//Centreren van map
  	var world = {lat: 41.385063, lng: 2.173404};
@@ -94,48 +94,80 @@
           }
 	});
 
+	//Vlieg bestemmingen /////////////
+	//////////
+	////////
+	/////////
+	var locations = [
+	  ['SpaceX, Los Angeles', 33.920681, -118.328279, 4],
+	  ['Schiphol, Amsterdam', 52.310539, 4.768274, 5],
+	  ['Sheremetyevo International Airport, Russian Federation.', 55.9703, 37.4088, 3],
+	  ['Heydar Aliyev International Airport, Azerbaijan', 40.467164798, 50.041333168, 2],
+	  ['Athens International Airport (ATH), Spata Srtemida, Greece', 37.937225, 23.945238, 1]
+	];
 
+	var infowindow = new google.maps.InfoWindow();
 
-	//Oproepen van marker
+    var marker, i;
 
-	//Vlieg bestemmingen
-  	addMarker({lat: 33.920681, lng: -118.328279});
-  	addMarker({lat: 52.310539, lng: 4.768274});
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon:  'img/airplane.png'
+      });
 
-  	//Toevoegen van marker function
-  	function addMarker(coords){
-  		var marker = new google.maps.Marker({
-		map: map,
-		icon:  'img/airplane.png',
-		animation: google.maps.Animation.DROP,
-		position: coords
-	});
-  	marker.addListener('click', toggleBounce);
-  	}
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+    ////////
+    //////
+    ///////
 
-  		//Vlieg bestemmingen
-  	addFoodMarker({lat: 40.391220, lng: 49.843630});
-  	addFoodMarker({lat: 41.387340, lng: 2.156200});
+    //Restaurants bestemmingen /////////////
+	//////////
+	////////
+	/////////
+	var restaurants = [
+	  ['The Clove Club, London, Verenigd Koninkrijk', 51.521580, -0.079258, 4],
+	  ['Nusr-Et, Jumeirah Beach Dubai Restaurant Village Four Seasons Resort - Verenigde Arabische Emiraten', 25.202388, 55.240366, 5],
+	  ['El Salvadoreño Restaurant Bar, New York, USA.', 40.661790, -74.212758, 3],
+	  ['40 Rue Diour Saboun, Marrakesh, Marokko', 31.635638,  -7.989053, 2],
+	  ['Косатка / Kosatka, Kiev, Ukraine', 50.455161,  30.511378, 1]
+	];
 
-  	//Toevoegen van marker function
-  	function addFoodMarker(coords){
-  		var foodMarker = new google.maps.Marker({
-		map: map,
-		icon:  'img/food.png',
-		animation: google.maps.Animation.DROP,
-		position: coords
-	});
-  	foodMarker.addListener('click', toggleBounce);
-  	}
+	var infoFoodWindow = new google.maps.InfoWindow();
 
+    var foodMarker, l;
 
+    for (l = 0; l < restaurants.length; l++) {  
+      foodMarker = new google.maps.Marker({
+        position: new google.maps.LatLng(restaurants[l][1], restaurants[l][2]),
+        map: map,
+        icon:  'img/food.png'
+      });
+
+      google.maps.event.addListener(foodMarker, 'click', (function(foodMarker, l) {
+        return function() {
+          infoFoodWindow.setContent(restaurants[l][0]);
+          infoFoodWindow.open(map, foodMarker);
+        }
+      })(foodMarker, l));
+    }
+    ////////
+    //////
+    ///////
 }
 
-//Marker animatie
-function toggleBounce() {
-	if (marker.getAnimation() !== null) {
-		marker.setAnimation(null);
-	} else {
-		marker.setAnimation(google.maps.Animation.BOUNCE);
-	}
-}		
+
+
+
+
+
+	
+
+

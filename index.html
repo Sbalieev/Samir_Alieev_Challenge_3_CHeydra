@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron:700,900" rel="stylesheet">
 	<script src="js/main.js" defer></script>
     <script src="js/api.js" defer></script>
+     <script src="js/apiWeer.js" defer></script>
 </head>
 
 <body>
@@ -18,11 +19,11 @@
                 
             </div>
             <div id="informatie">
-                <div class="icons">
-                    <img src="img/airplane.png" /> Bestemming
+                <div class="icons" >
+                    <img src="img/airplane.png" /> Bestemmingen
                 </div>
                 <div class="icons">
-                    <img src="img/food.png" /> Voedsel
+                    <img src="img/food.png" /> Restaurants
                 </div>
             </div>
         </header>
@@ -32,12 +33,14 @@
                     <article id="weather"></article>
                     <form>
                         <fieldset>
-                            <legend>Huidige weer opvragen</legend>
                             <label for="city">Stad:</label>
-                            <input type="text" name="city" id="city" />
+                            <input type="text" name="city" id="city" placeholder="Huidige weer opvragen" />
                             <input type="button" id="getWeather" value="Opvragen" />
                         </fieldset>
                     </form>
+                </div>
+                <div class="forecastMessage" id="steden">
+                    <div id="omstreken"></div>
                 </div>
             </section>
         </main>

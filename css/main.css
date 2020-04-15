@@ -66,12 +66,56 @@ body {
     	color:#eee;
     }
 
-    .location {
-    	background: white;
-    	width: 200px;
-    	height: 150px;
-    	text-align: center;
+    .forecastMessage {
+    	display: flex;
+    	flex: 2;
+    	flex-direction: row;
+    	 flex-wrap: wrap;
+    	width: 50%;
     }
+    .forecastMoment {
+    	background: #17263c;
+    	min-width: 10%;
+    	padding: 20px;
+    	text-align: center;
+    	color: #eee;
+    	margin-right: 2%;
+    }
+    #datum {
+    	flex: 1;
+    }
+  	
+  	#omstreken {
+  		flex: 1 0 100%;
+  	}
+
+  	form {
+  		width: 50%;
+  	}
+
+  	fieldset {
+		border: none;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+  	}
+
+   	#city {
+  		width: 100%;
+  	}
+
+  	#getWeather {
+  		width: 50%;
+  		margin-top:  20px;
+  		padding: 5%;
+  		border: none;
+  		background: #17263c;
+  		color: #eee;
+  	}
+  	#getWeather:hover {
+  		background: #707782;
+  		cursor: pointer;
+  	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 1750px) {
