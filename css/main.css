@@ -222,4 +222,8 @@ fieldset {
         margin-right: auto;
         margin-left: auto;
     }
+
+    .icons {
+        margin-right: 0px;
+    }
 }
