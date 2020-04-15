@@ -8,6 +8,12 @@ body {
     color: #394E61;
 }
 
+main {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
 #container {
     height: 100%;
     width: 100%;
@@ -16,157 +22,204 @@ body {
     flex-direction: column;
 }
 
+header {
+    flex: 3;
+    width: 100%;
+    height: 100%;
+}
 
-@media screen and (min-width: 1751px) {
-    header {
-    	flex: 3;
-    	width: 100%;
-    	height: 100%;
-	}
+section {
+    width: 80%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-between;
+}
 
-	#map {
-		width: 80%;
-		height: 80%;		
-		margin-right: auto;
-		margin-left: auto;
-		margin-top: 20px;
-	}
+#informatie {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
-	main {
-        flex: 1;
-        height: 100%;
+.forecastMessage {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.forecastMoment {
+    background: #17263c;
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+}
+
+#map {
+    width: 80%;
+    height: 80%;        
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+#datum {
+    flex: 1;
+}
+
+#omstreken {
+    flex: 1 0 100%;
+}
+
+fieldset {
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#getWeather {
+    border: none;
+    background: #17263c;
+    color: #eee;
+}
+
+#city {
+    width: 100%;
+    padding: 10px 0 10px 5px;
+}
+
+.icons > img {
+    vertical-align: middle;
+}
+
+.icons {
+    padding: 20px;
+    margin-right: 20px;
+    background: #17263c;
+    color:#eee;
+}
+
+#getWeather {
+    margin-top:  20px;
+}
+#getWeather:hover {
+    background: #707782;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1551px) {
+    section {
+        flex-direction: row;
+    }
+
+    form {
+        width: 50%;
+    }
+
+    #getWeather {
         width: 100%;
+        padding: 5%;
+    }
+
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1550px) {
+    section {
+        flex-direction: column;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    #getWeather {
+        width: 20%;
+        margin-bottom: 20px;
+        padding: 1%;
+    }
+
+}
+
+@media screen and (min-width: 701px) and (max-width: 1022px) {
+    body{
+        background: #eee;
     }
 
     section {
-    	width: 80%;
-    	display: flex;
-    	flex: row;
-    	margin-right: auto;
-		margin-left: auto;
-		justify-content: space-between;
+        flex-direction: column;
     }
 
-    #informatie {
-    	width: 80%;
-    	display: flex;
-    	flex-direction: row;
-    	margin-top: 10px;
-    	margin-right: auto;
-		margin-left: auto;
-    }
-    .icons > img {
-    	vertical-align: middle;
-    }
-
-    .icons {
-    	padding: 20px;
-    	margin-right: 20px;
-    	background: #17263c;
-    	color:#eee;
+    header {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
     }
 
     .forecastMessage {
-    	display: flex;
-    	flex: 2;
-    	flex-direction: row;
-    	 flex-wrap: wrap;
-    	width: 50%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
     }
+
     .forecastMoment {
-    	background: #17263c;
-    	min-width: 10%;
-    	padding: 20px;
-    	text-align: center;
-    	color: #eee;
-    	margin-right: 2%;
+        padding: 0px;
+        border-bottom: 1px solid #eee;
     }
-    #datum {
-    	flex: 1;
-    }
-  	
-  	#omstreken {
-  		flex: 1 0 100%;
-  	}
 
-  	form {
-  		width: 50%;
-  	}
-
-  	fieldset {
-		border: none;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-  	}
-
-   	#city {
-  		width: 100%;
-  	}
-
-  	#getWeather {
-  		width: 50%;
-  		margin-top:  20px;
-  		padding: 5%;
-  		border: none;
-  		background: #17263c;
-  		color: #eee;
-  	}
-  	#getWeather:hover {
-  		background: #707782;
-  		cursor: pointer;
-  	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 1750px) {
-    #container {
-        height: 100%;
+    #getWeather {
         width: 100%;
-        background-color: #eee;
-        display: flex;
-        flex-direction: column;
-    }
-    header {
-        width: 100%;
-        flex: 1;
-    }
-    
-    main {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-    }  
-}
-
-@media screen and (min-width: 376px) and (max-width: 767px) {
-    #container {
-        height: 100%;
-        width: 100%;
-        background-color: #eee;
-        display: flex;
-        flex-direction: column;
-    }
-    header {
-        width: 100%;
-        flex: 1;
+        margin-bottom: 20px;
+        padding: 1%;
     }
 }
 
-@media screen and (max-width: 375px) {
-    #container {
-        height: 100%;
-        width: 100%;
-        background-color: #eee;
-        display: flex;
+@media screen and (max-width: 700px) {
+    body{
+        background: #eee;
+    }
+
+    section {
         flex-direction: column;
     }
+
     header {
-        width: 100%;
-        flex: 1;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
     }
-    main {
+
+    .forecastMessage {
+        display: flex;
         flex: 1;
+        flex-direction: column;
+    }
+
+    .forecastMoment {
+        padding: 0px;
+        border-bottom: 1px solid #eee;
+    }
+
+    #getWeather {
         width: 100%;
-        height: 100%;
+        margin-bottom: 20px;
+        padding: 1%;
+    }
+    #weather {
+        text-align: center;
+    }
+
+    #informatie {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }

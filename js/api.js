@@ -1,11 +1,9 @@
 function getAPIdata() {
-
-	var url = 'https://api.openweathermap.org/data/2.5/weather';
-	var apiKey ='d208868a5986aa80b81e3622080a435e';
+	var url = 'https://api.openweathermap.org/data/2.5/weather?appid=d208868a5986aa80b81e3622080a435e';
 	var city = document.getElementById('city').value;
 
 	// construct request
-	var request = url + '?' + 'appid=' + apiKey + '&' + 'q=' + city;
+	var request = url +  '&' + 'q=' + city;
 	
 	// get current weather
 	fetch(request)
@@ -27,23 +25,22 @@ function getAPIdata() {
 		onAPIError(error);
 	});
 }
-//hier 1.
-   // Render weather listing
 
 function onAPISucces(response) {
 	// get type of weather in string format
+	var name = response.name;
 	var type = response.weather[0].description;
-
+	
 	// get temperature in Celcius
-	var cityID = response.id;
 	var degC = Math.floor(response.main.temp - 273.15);
+
+	// get icon for weather
 	var iconUrl = 'http://openweathermap.org/img/w/'+response.weather[0].icon+'.png';
+	
 	// render weather in DOM
 	var weatherBox = document.getElementById('weather');
 	
-	weatherBox.innerHTML = degC + '&#176;C <br>' + type + '<div class="icon"> <img src="'+iconUrl+'"> </div>';
-	
-	 
+	weatherBox.innerHTML =  '<div>' + "It's " + degC + '&#176;C ' + "now in </br>" + '</div>' + name + ' with </br>' + type + '<img src="'+iconUrl+'">'; 
 }
 
 function onAPIError(error) {

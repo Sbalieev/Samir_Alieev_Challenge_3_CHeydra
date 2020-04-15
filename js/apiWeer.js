@@ -1,8 +1,5 @@
 function getAPIWeerdata() {
-
-	var request = 'http://api.openweathermap.org/data/2.5/group?id=2747373,292223,524901,703448,2643743&appid=d208868a5986aa80b81e3622080a435e';
-
-
+	var request = 'http://api.openweathermap.org/data/2.5/group?id=5128581,292223,524901,703448,2643743&appid=d208868a5986aa80b81e3622080a435e';
 	
 	// get current weather
 	fetch(request)
@@ -24,16 +21,13 @@ function getAPIWeerdata() {
 		onAPIWeerSucces(error);
 	});
 }
-//hier 1.
-   // Render weather listing
 
 function onAPIWeerSucces(response) {
 
-	// get type of weather in string format
 	var weatherList = response.list;
 	var weatherBox = document.getElementById('steden');
 	var omstreken = document.getElementById('omstreken');
-	var ookPopulair = "Populaire steden";
+	var ookPopulair = "Other cities";
 
 	for(var i=0; i< weatherList.length; i++){
 		var temp = Math.floor(weatherList[i].main.temp - 273.15);
@@ -49,8 +43,6 @@ function onAPIWeerSucces(response) {
 		forecastMessage +=	 '<div class="icon"> <img src="' + iconUrl + '"> </div>';
 		forecastMessage += '</div>';
 		weatherBox.innerHTML += forecastMessage;
-
-		
 	}
 	
 }
@@ -58,8 +50,3 @@ function onAPIWeerSucces(response) {
 function onAPIWeerError(error) {
 	console.error('Fetch request failed', error);
 }
-
-
-
-
-

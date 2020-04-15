@@ -133,10 +133,10 @@ function initMap() {
 	////////
 	/////////
 	var restaurants = [
-	  ['The Clove Club, London, Verenigd Koninkrijk', 51.521580, -0.079258, 4],
-	  ['Nusr-Et, Jumeirah Beach Dubai Restaurant Village Four Seasons Resort - Verenigde Arabische Emiraten', 25.202388, 55.240366, 5],
+	  ['The Clove Club, London, United Kingdom', 51.521580, -0.079258, 4],
+	  ['Nusr-Et, Jumeirah Beach Dubai Restaurant Village Four Seasons Resort, United Arab Emirates', 25.202388, 55.240366, 5],
 	  ['El Salvadoreño Restaurant Bar, New York, USA.', 40.661790, -74.212758, 3],
-	  ['40 Rue Diour Saboun, Marrakesh, Marokko', 31.635638,  -7.989053, 2],
+	  ['40 Rue Diour Saboun, Marrakesh, Morocco', 31.635638,  -7.989053, 2],
 	  ['Косатка / Kosatka, Kiev, Ukraine', 50.455161,  30.511378, 1]
 	];
 
