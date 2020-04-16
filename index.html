@@ -7,9 +7,10 @@
     <title>Challenge 3</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Orbitron:700,900" rel="stylesheet">
-	<script src="js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script src="js/api.js" defer></script>
      <script src="js/apiWeer.js" defer></script>
+     <script src="js/corona.js" defer></script>
 </head>
 
 <body>
@@ -42,7 +43,29 @@
                 <div class="forecastMessage" id="steden">
                     <div id="omstreken"></div>
                 </div>
-            </section>
+                </section>
+                <div id="coronaTable">
+                    
+                    <div id="titel"><h2>Corona COVID-19 Live update</h2></div>
+                        <div id="headers">
+                            <div>New confirmed</div>
+                            <div>Total confirmed</div>
+                            <div>New Deaths</div>
+                            <div>Total deaths</div>
+                            <div>New recovered</div>
+                            <div>Total recovered</div>
+                        </div>
+                        <div id="cases">
+                            <div id="newConfirmed"></div>
+                            <div id="totalConfirmed"></div>
+                            <div id="newDeaths"></div>
+                            <div id="totalDeaths"></div>
+                            <div id="newRecovered"></div>
+                            <div id="totalRecovered"></div>   
+                        </div>
+                    </table>
+                </div>
+            
         </main>
     </div> 
 </body>
