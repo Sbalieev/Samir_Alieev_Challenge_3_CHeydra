@@ -1,5 +1,5 @@
 function getAPIWeerdata() {
-	var request = 'http://api.openweathermap.org/data/2.5/group?id=5128581,292223,524901,703448,2643743&appid=d208868a5986aa80b81e3622080a435e';
+	var request = 'https://api.openweathermap.org/data/2.5/group?id=5128581,292223,524901,703448,2643743&appid=d208868a5986aa80b81e3622080a435e';
 	
 	// get current weather
 	fetch(request)
