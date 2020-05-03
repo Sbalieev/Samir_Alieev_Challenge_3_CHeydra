@@ -2,6 +2,7 @@ function getCorona() {
 	var request = 'https://api.covid19api.com/summary';
 	var requestOptions = {
 	  method: 'GET',
+	mode: 'no-cors',
 	  redirect: 'follow'
 	};
 	// get current weather
